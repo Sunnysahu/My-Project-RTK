@@ -9,9 +9,10 @@ const initialState = {
   isLoggedIn: false,
 };
 
-export const statusSlice = {
+export const userSlice = createSlice({
   name: "status",
   initialState,
+
   reducer: {
     checkStatus: (state, action) => {
       state.data = state.data.map((user) => {
@@ -20,11 +21,18 @@ export const statusSlice = {
         }
       });
     },
+    loadFromLocalStorage: (state, action) => {
+      const storedData = localStorage.getItem("userData");
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        state.data = parsedData;
+      }
+    },
   },
-};
+});
 
-export const { checkStatus } = statusSlice.actions;
+export const { checkStatus, loadFromLocalStorage } = userSlice.actions;
 
-const statusReducer = statusSlice.reducer;
+const statusReducer = userSlice.reducer;
 
 export default statusReducer;
