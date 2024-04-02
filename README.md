@@ -1,7 +1,5 @@
 # React + Vite
 
-# Note: - Make sure to have Node.js and npm (Node Package Manager) installed on your machine before following these steps.
-
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -48,5 +46,7 @@ To run this project, follow these steps:
    ```
 
 The project should now be up and running. Open your web browser and navigate to the provided URL (usually `http://localhost:5173`) to view the application.
+
+# Note: - Make sure to have Node.js and npm (Node Package Manager) installed on your machine before following these steps.
 
 Else, visit the the Website: [https://nodejs.org/en]
