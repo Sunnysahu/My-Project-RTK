@@ -8,25 +8,26 @@ import Signin from "./components/Signin";
 import { signIn, signUp } from "./features/userSlice";
 
 function App() {
+  // USed UseSelector from Redux
+
+  //Getting Login State for Login Check
   const login = useSelector((state) => state.isLogin);
 
-  console.log("login", login);
   const signup = useSelector((state) => state.isSignUp);
 
-  console.log("signup", signup);
+  //Getting Signup State for Signup Check
 
   const signIn = useSelector((state) => state.isSignIn);
 
-  console.log("singin", signIn);
+  //Getting Signin State for Sign Check
 
   const name = useSelector((state) => state.name);
   return (
     <>
       <h1 className="bg-gray-500 text-3xl text-black mb-4">Hello {name}!!!</h1>
+      // All the Checks Going on got from my Redux Store.
       {signIn ? <Signin /> : null}
-
       {signup ? <Signup /> : null}
-
       {login ? <Login /> : null}
     </>
   );

@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { parse } from "postcss";
 
+// Creating Intital State or Blank State
+
 const initialState = {
-  data: [
-    // { username: "Sunny@123", password: "Sunny@123" },
-    // { username: "John", password: "John@123" },
-  ],
+  data: [],
   isLogin: false,
   isSignIn: true,
   isSignUp: false,
@@ -17,53 +16,38 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     checkStatus: (state, action) => {
-      // console.log("Hns", state.data.);
       const storedData = localStorage.getItem("userData");
       const parsedData = JSON.parse(storedData);
+      //Stroing thr Parsed Data in the State...
       state.data = parsedData;
-      console.log(state.data);
 
+      //Geting the Previous State and Checking the Data
       state.data.map((user) => {
-        console.log("Check", user.userInput, user.password);
-        console.log(
-          "Check 2,0",
-          action.payload.userInput,
-          action.payload.password
-        );
-
         if (
           user.userInput === action.payload.userInput &&
           user.password === action.payload.password
         ) {
-          console.log("Im HEre");
           state.name = user.userInput;
-          console.log("Nmae", state.name);
-          // console.log(state.data.username);
-          // console.log(state.isLogin);
+          //Changing my Checks...
           state.isLogin = true;
-          // console.log(state.isLogin);
           state.isSignIn = false;
           state.isSignUp = false;
         }
-        // console.log("Here", state.isLoggedIn);
       });
     },
     loadFromLocalStorage: (state, action) => {
       const newDataset = action.payload;
-      console.log("newDataset", newDataset);
+      // Getting Data from Local Storage and Parsing It
       const storedData = localStorage.getItem("userData");
       if (storedData) {
         const parsedData = JSON.parse(storedData);
-        // console.log("Parsed", parsedData);
 
         state.data = parsedData;
-        // console.log("state", state.data);
-
-        // console.log("after", state.data);
+        //Pushing the Data into the State, so every Component can access it
         state.data.push(newDataset);
         localStorage.setItem("userData", JSON.stringify(state.data));
-        console.log("test:", state.data);
       } else {
+        // if the user is using this for the first time then, it will create a data storage as soon as user signup...
         const newData = localStorage.setItem(
           "userData",
           JSON.stringify([newDataset])
@@ -71,6 +55,7 @@ export const userSlice = createSlice({
       }
     },
     login: (state, action) => {
+      //Checking States
       state.isLogin = action.payload;
     },
     signUp: (state, action) => {
