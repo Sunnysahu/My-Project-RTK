@@ -28,6 +28,8 @@ export const userSlice = createSlice({
           user.password === action.payload.password
         ) {
           state.name = user.userInput;
+          alert("User Logged In Successful!!!");
+
           //Changing my Checks...
           state.isLogin = true;
           state.isSignIn = false;
