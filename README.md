@@ -9,7 +9,6 @@ Currently, two official plugins are available:
 
 Sure, here's the entire content as a markdown file:
 
-````markdown
 # React Redux Project
 
 This is a Project based on React.js using Redux, where users can log in, sign up, and sign in. The data is stored in the local storage.
@@ -23,7 +22,6 @@ To run this project, follow these steps:
    ```
    cd path-Address
    ```
-````
 
 2. Install the required dependencies:
 
