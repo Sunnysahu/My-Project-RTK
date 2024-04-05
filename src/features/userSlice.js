@@ -29,7 +29,6 @@ export const userSlice = createSlice({
         ) {
           state.name = user.userInput;
           alert("User Logged In Successful!!!");
-          console.log(state.data);
 
           //Changing my Checks...
           state.isLogin = true;
