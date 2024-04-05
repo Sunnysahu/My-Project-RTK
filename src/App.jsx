@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h1 className="bg-gray-500 text-3xl text-black mb-4">Hello {name}!!!</h1>
-      // All the Checks Going on got from my Redux Store.
+      {/* All the Checks Going on got from my Redux Store. */}
       {signIn ? <Signin /> : null}
       {signup ? <Signup /> : null}
       {login ? <Login /> : null}
