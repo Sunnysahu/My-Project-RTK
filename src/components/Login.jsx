@@ -17,7 +17,7 @@ function Login() {
         className="mt-4 bg-gray-200 rounded-lg border border-black px-3 py-1"
         type="submit"
         onClick={() => {
-          alert("User Logged Out!!!");
+          // alert("User Logged Out!!!");
           dispatch(login(false));
           dispatch(signIn(true));
           dispatch(nameCheck(""));

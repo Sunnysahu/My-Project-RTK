@@ -12,7 +12,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("User Signup Successed ");
+    // alert("User Signup Successed ");
     dispatch(loadFromLocalStorage({ userInput, password }));
 
     setUserInput("");

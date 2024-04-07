@@ -18,7 +18,7 @@ export const userSlice = createSlice({
     checkStatus: (state, action) => {
       const storedData = localStorage.getItem("userData");
       const parsedData = JSON.parse(storedData);
-      //Stroing thr Parsed Data in the State...
+      // Stroing thr Parsed Data in the State...
       state.data = parsedData;
 
       //Geting the Previous State and Checking the Data
@@ -28,7 +28,7 @@ export const userSlice = createSlice({
           user.password === action.payload.password
         ) {
           state.name = user.userInput;
-          alert("User Logged In Successful!!!");
+          // alert("User Logged In Successful!!!");
 
           //Changing my Checks...
           state.isLogin = true;
